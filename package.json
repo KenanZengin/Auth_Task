@@ -9,8 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@syncfusion/ej2-base": "^24.1.42",
+    "@syncfusion/ej2-react-grids": "^24.1.45",
+    "bcrypt": "^5.1.1",
+    "formik": "^2.4.5",
+    "mongoose": "^8.0.4",
+    "next": "14.0.4",
+    "next-auth": "^4.24.4",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.0.4"
+    "react-icons": "^5.0.1",
+    "sass": "^1.69.7"
   }
 }
