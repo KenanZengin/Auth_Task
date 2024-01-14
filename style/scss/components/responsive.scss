@@ -1,0 +1,26 @@
+$breakpoints:(
+    xz:  0,
+    xx:  400px,
+    xm:  550px, 
+    xs:  620px,
+    xxs: 720px,
+    sm:  850px,
+    md_h : 950px,
+    md:  1050px,
+    lg_m:1200px,
+    lg:  1300px,
+    xl:  1400px,
+    xl_m: 1550px,
+    xl_h: 1640px,
+    hd:  1720px,
+    1k:  1940px,
+    2k:  2580px
+);
+
+
+@mixin MaxWidthResponsive($point) {
+    @media (max-width: (map-get($breakpoints, $point) - 1)) {
+           @content
+    }
+}
+
