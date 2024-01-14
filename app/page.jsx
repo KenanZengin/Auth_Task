@@ -1,7 +1,5 @@
 
 import LogoutButton from "@/components/logout-button";
-
-import data2 from "../data/test.json"
 import DataTable from "@/components/data-table";
 
 export async function GetData(){
@@ -14,13 +12,10 @@ export async function GetData(){
 export default async function Home() {
 
   const data = await GetData();
-  console.log(data);
 
   return (
    <div>
-      
-
-      <DataTable data={data2} />
+      <DataTable data={data} />
       <LogoutButton/>
    </div>
   )

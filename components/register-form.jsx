@@ -50,17 +50,34 @@ const RegisterForm = () => {
             <form onSubmit={formik.handleSubmit}>
                 <label htmlFor="name">
                     <span>Name</span>
-                    <input type="text" placeholder="Enter your user name..." id="name" name="name" {...formik.getFieldProps("name")} />
+                    <input 
+                        type="text" 
+                        id="name" 
+                        name="name" 
+                        placeholder="Enter your user name..." 
+                        {...formik.getFieldProps("name")} />
                     {formik.errors.name && formik.touched.name ? <span>{formik.errors.name}</span> : ""}
                 </label>
                 <label htmlFor="email">
                     <span>Email</span>
-                    <input type="email" placeholder="Enter your user name..." id="email" name="email" {...formik.getFieldProps("email")} />
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        placeholder="Enter your user name..." 
+                        {...formik.getFieldProps("email")} 
+                    />
                     {formik.errors.email && formik.touched.email ? <span>{formik.errors.email}</span> : ""}
                 </label>
                 <label htmlFor="password">
                     <span>Password</span>
-                    <input type="password" placeholder="Enter your user name..." id="password" name="password" {...formik.getFieldProps("password")} />
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        placeholder="Enter your user name..." 
+                        {...formik.getFieldProps("password")} 
+                    />
                     {formik.errors.password && formik.touched.password ? <span>{formik.errors.password}</span> : ""}
                 </label>
                 <button type="submit">

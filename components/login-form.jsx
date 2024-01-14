@@ -48,12 +48,24 @@ const LoginForm = () => {
         <form onSubmit={formik.handleSubmit}>
             <label htmlFor="email">
                 <span>Email</span>
-                <input type="email" name="email" id="email" placeholder="Enter your email" {...formik.getFieldProps("email")} />
+                <input 
+                    type="email" 
+                    name="email" 
+                    id="email" 
+                    placeholder="Enter your email" 
+                    {...formik.getFieldProps("email")}
+                />
                 {formik.errors.email && formik.touched.email ? <span >{formik.errors.email}</span> : ""}
             </label>
             <label htmlFor="password">
                 <span>Password</span>
-                <input type="password" name="password" id="password" placeholder='Enter your password' {...formik.getFieldProps("password")} />
+                <input 
+                    type="password" 
+                    name="password" 
+                    id="password" 
+                    placeholder='Enter your password' 
+                    {...formik.getFieldProps("password")}
+                />
                 {formik.errors.password && formik.touched.password ? <span>{formik.errors.password}</span> : ""}
             </label>
             <button type="submit">Login</button>
