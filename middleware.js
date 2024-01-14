@@ -13,7 +13,7 @@ export function middleware(request){
   
 
     if(!isPublicPath && !token){
-        return NextResponse.redirect(new URL("http://localhost:3000/login"),request.nextUrl);
+        return NextResponse.redirect(new URL(`${process.env.NEXTAUTH_URL}/login`),request.nextUrl);
     }
 }
 
