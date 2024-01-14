@@ -11,7 +11,7 @@ import{
     Group, 
     Edit,
     Toolbar,
-} from '@syncfusion/ej2-react-grids';
+} from '@syncfusion/ej2-react-grids'; //syncfusion'un grid ozelliklerini import edip tabloda kullanıyoruz.
 
 
 const DataTable = ({data}) => {
@@ -22,7 +22,7 @@ const DataTable = ({data}) => {
 
     return (
         <div>
-            <GridComponent
+             <GridComponent 
                 dataSource={data}
                 allowPaging={true}
                 pageSettings={{pageSize : 10}}

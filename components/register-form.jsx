@@ -35,15 +35,15 @@ const RegisterForm = () => {
             body: JSON.stringify(values)
         };
 
-        const res = await fetch(`/api/users/register`,options);
+        const res = await fetch(`/api/users/register`,options); // formdan aldığımız kullanıcı bilgileri Post methodu ile api klasörümüze iletiyoruz.
         const data = await res.json();
 
-        if(res.ok && res.status === 201){
+        if(res.ok && res.status === 201){ // eğer ki kullanıcı oluşmuş ise bize status , 201 döncek ve res.ok olucağı için kullanıcıyı login sayfasına yönlendiriyoruz
             router.push("./login");
             formik.resetForm();
         }else{
-            setReqMessage(data.message)
-            setCheckInfo(false)
+            setReqMessage(data.message) // kullanıcı oluşmamış ise bir problem vardır bu problemi reqMessage'e set ediyoruz.
+            setCheckInfo(false) // loading'i iptal ediyoruz
         }
     }
 

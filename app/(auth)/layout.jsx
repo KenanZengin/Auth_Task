@@ -1,5 +1,4 @@
 
-
 const AuthLayout = ({children}) => {
   
   return (

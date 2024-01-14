@@ -17,6 +17,8 @@ const LoginForm = () => {
     const [checkForm,setCheckForm] = useState(false)
     const [errorMessage,setErrorMessage] = useState("")
 
+
+    //formik ile form'dan alıcağımız dataları, validate işlemlerini ve onSubmit olduğu zaman yapıcağımız işlemleri tanımlıyoruz.
     const formik = useFormik({
         initialValues:{
             email: "",
@@ -26,22 +28,23 @@ const LoginForm = () => {
         onSubmit
     })
 
+    
     async function onSubmit(values){
         console.log(values);
-        setCheckForm(true)
-        const status = await signIn("credentials",{
+        setCheckForm(true) //butona tıklandığını anı yakalıyoruz ve kullanıcı butona bastığı için loading componentini döndürüyoruz
+        const status = await signIn("credentials",{ // auth credentials'a formdan aldığımız verileri yolluyoruz.
             redirect: false,
             email : values.email,
             password : values.password, 
         }).then(res => {
-                if(res.ok){
-                    router.push("/");
-                    router.refresh();
+                if(res.ok){ // eğer ki res.ok ise işlem başarılı demektir.
+                    router.push("/"); // kullanıcıyı ana sayfaya yolluyoruz
+                    router.refresh(); // kullanıcı giriş yaptığında tekrardan render edilebilcek ifadeler olursa diye refresh() fonk. kullanıyoruz
                 }else{
-                    setErrorMessage(() => res.error)
-                    setCheckForm(false)
+                    setErrorMessage(() => res.error) // res !== ok ise bi hata var demektir bu hatayı alıp errorMessage componentine yazıyor
+                    setCheckForm(false) // artık hata aldığımız için loading componentini durduruyoruz.
                 }
-        }).catch(error => setErrorMessage(() => error))
+        }).catch(error => setErrorMessage(() => error)) // bunların dışında bir server hatası var ise hatayı alıp yine errorMessage componentine yazıyoruz.
     }
 
     return (

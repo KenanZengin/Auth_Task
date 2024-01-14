@@ -1,3 +1,4 @@
+//DB'de oluşturcağımız kullanıcı bilgileri modelini tanımlıyoruz
 import { Schema, models, model } from "mongoose";
 
 const userSchema = new Schema({

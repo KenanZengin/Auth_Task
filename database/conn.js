@@ -4,8 +4,10 @@ import mongoose from "mongoose";
 
     try {
         
+        //DB'ye bağlanıyoruz
         const {connection} = await mongoose.connect(process.env.MONGODB_URL);
 
+        //DB'den dönebilecek durumları listeliyoruz.
         switch(connection.readyState){
             case 0:
                 console.log("Database connection lost");
