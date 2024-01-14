@@ -5,12 +5,7 @@ import DataTable from "../components/data-table";
 
 export async function GetData(){
 
-  let base_url =
-    process.env.NODE_ENV === "development"
-      ? `${process.env.NEXTAUTH_URL}/api/products`
-      : `${process.env.BASE_URL}/api/products`
-
-  const res = await fetch(base_url);
+  const res = await fetch("https://dummyjson.com/products");
   const data = await res.json();
 
   return data.products;
