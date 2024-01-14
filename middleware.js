@@ -10,7 +10,9 @@ export function middleware(request){
     
     const token = request.cookies.get(process.env.SESSION_NAME)?.value;
 
-  
+    if(isPublicPath && token){
+        return NextResponse.redirect(new URL("/",request.nextUrl))
+    }
 
     if(!isPublicPath && !token){
         return NextResponse.redirect(new URL(`${process.env.NEXTAUTH_URL}login`),request.nextUrl);
