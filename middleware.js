@@ -8,12 +8,12 @@ export function middleware(request){
     
     const isPublicPath = path === "/login"  || path === "/register";
     
-    const token = request.cookies.get("next-auth.session-token")?.value;
+    const token = request.cookies.get(process.env.SESSION_NAME)?.value;
 
   
 
     if(!isPublicPath && !token){
-        return NextResponse.redirect(new URL(`${process.env.NEXTAUTH_URL}/login`),request.nextUrl);
+        return NextResponse.redirect(new URL(`${process.env.NEXTAUTH_URL}login`),request.nextUrl);
     }
 }
 
