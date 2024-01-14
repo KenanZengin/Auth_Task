@@ -1,10 +1,12 @@
-import React from 'react'
+
 
 const AuthLayout = ({children}) => {
+  
   return (
-    <div>
-        <div>İtems</div>
+    <div className='form'>
+      <div className="form-wrapper">
         {children}
+      </div>    
     </div>
   )
 }

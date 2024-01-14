@@ -1,6 +1,7 @@
 
-import LogoutButton from "@/components/logout-button";
-import DataTable from "@/components/data-table";
+import LogoutButton from "../components/logout-button";
+import DataTable from "../components/data-table";
+
 
 export async function GetData(){
   const res = await fetch(`${process.env.NEXTAUTH_URL}/api/products`);
@@ -9,14 +10,15 @@ export async function GetData(){
   return data.products;
 }
 
+
 export default async function Home() {
 
   const data = await GetData();
 
   return (
-   <div>
-      <DataTable data={data} />
+   <div className="home_page">
       <LogoutButton/>
+      <DataTable data={data} />
    </div>
   )
 }

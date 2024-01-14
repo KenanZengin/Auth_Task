@@ -23,14 +23,13 @@ export const authOptions = ({
 
                 if(!checkPassword) throw new Error("Wrong password!")
 
-                return result
+                return NextResponse.json(result,{status: 200})
 
             }
 
         })
     ],
     secret : process.env.NEXTAUTH_SECRET,
-    
 })
 
 const handler = NextAuth(authOptions)

@@ -1,4 +1,3 @@
-
 "use client"
 
 import{ 
@@ -7,15 +6,13 @@ import{
     ColumnDirective, 
     Inject, 
     Page, 
-    Filter, 
-    IFilter, 
-    VirtualScroll, 
+    Filter,  
     Sort, 
     Group, 
     Edit,
     Toolbar,
-    ToolbarItems
 } from '@syncfusion/ej2-react-grids';
+
 
 const DataTable = ({data}) => {
 

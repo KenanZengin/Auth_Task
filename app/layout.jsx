@@ -1,7 +1,7 @@
 import { registerLicense } from "@syncfusion/ej2-base"
-import "../scss/global.scss"
-import AuthProvider from '../components/auth-provider'
+import "../style/global.scss"
 import { Inter } from 'next/font/google'
+import AuthProvider from '../components/auth-provider'
 
 const inter = Inter({ subsets: ['latin'] })
 

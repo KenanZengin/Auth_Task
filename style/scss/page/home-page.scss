@@ -1,0 +1,16 @@
+.home_page{
+    height: 100%;
+    background:linear-gradient(to right , #0e151d , #0d1d1a);
+    padding: 25px 0;
+    button{
+        background-color: #066c82;
+        color: #fff;
+        padding: 5px 12px;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin: 10px;
+        cursor: pointer;
+    }
+}

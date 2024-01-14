@@ -4,7 +4,6 @@ import connectMongoDB from "../../../../database/conn";
 import Users from "../../../../models/schema";
 
 
-
 export async function POST(request){
 
     //DB'ye bağlanıyoruz
