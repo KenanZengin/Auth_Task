@@ -30,7 +30,7 @@ import mongoose from "mongoose";
                 return Promise.resolve(true);
                 break;
             default:
-                return "Pls check your database";
+                return  {message : "Pls check your database"};
         }
 
     } catch (error) {

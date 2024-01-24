@@ -16,7 +16,7 @@ import{
 
 const DataTable = ({data}) => {
 
-    console.log(data);
+   
     const editOptions =  {allowEditing: true, allowAdding: true, allowDeleting: true, mode : "Dialog"}
     const toolbarOptions = ["Add", "Edit", "Delete", "Update", "Cancel"]
 
